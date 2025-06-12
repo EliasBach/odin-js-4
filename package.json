@@ -2,7 +2,7 @@
   "name": "webpack-template",
   "version": "1.0.0",
   "description": "This is a basic project template, containing: *  configuration files for both development and distribution * HTML and CSS handlers * Image handler for formats: png, svg, jpg|jpeg|gif * script for the commands",
-  "main": "webpack.config.js",
+  "main": "webpack.dev.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.js",
