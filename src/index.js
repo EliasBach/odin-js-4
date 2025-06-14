@@ -1,4 +1,31 @@
 import "./styles.css";
+// import module for DOM-related stuff
+
+// Factory function for creating a project
+function Project(title) {
+    return {
+        title: title,
+        tasks: [],
+        addtask: function (Task) {
+            this.tasks.push(Task)
+            return this.tasks
+        }
+    }
+}
+
+let exampleproject = Project("Sleep")
+console.log(exampleproject)
+exampleproject.addtask("nap")
+console.log(exampleproject.tasks)
+
+function Task(title, description, dueDate, priority, notes) {
+    return {
+        title: title
+    }
+}
+
+
+
 
 // Factory Function Template
 function createObject(param1, param2) {
@@ -29,6 +56,6 @@ function createObject(param1, param2) {
   }
   
   // Usage
-  const obj = createObject('value1', 'value2');
-  console.log(obj.publicFunction()); // "Public: value1"
-  console.log(obj.usePrivate());     // "Accessing private data"
+  // const obj = createObject('value1', 'value2');
+  // console.log(obj.publicFunction()); // "Public: value1"
+  // console.log(obj.usePrivate());     // "Accessing private data"
