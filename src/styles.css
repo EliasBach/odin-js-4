@@ -30,9 +30,9 @@ button, .view, .add {
 
 .container {
     padding: 0px;
-    background-color: aqua;
+    background-color: rgb(226, 163, 235);
 }
 
 h2 {
-    background-color: yellow;
+    background-color: rgb(138, 108, 158);
 }

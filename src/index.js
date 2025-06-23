@@ -1,32 +1,48 @@
+// import module for DOM-related stuff and CSS
 import "./styles.css";
-// import module for DOM-related stuff
 
 // Factory function for creating a project
 function Project(title) {
-    return {
-        title: title,
-        tasks: [],
-        addtask: function (Task) {
-            this.tasks.push(Task)
-            return this.tasks
-        }
+  return {
+    title: title,
+    tasks: [],
+    addTask: function (Task) {
+      this.tasks.push(Task)
+      return this.tasks
     }
+  }
 }
 
-let exampleproject = Project("Sleep")
-console.log(exampleproject)
-exampleproject.addtask("nap")
-console.log(exampleproject.tasks)
-
-function Task(title, description, dueDate, priority, notes) {
-    return {
-        title: title
-    }
+// function to addProjects to in-memory array storage
+// call this function to create projects, to ensure they are stored
+let allProjects = []
+function addProject(title) {
+  let newproject = Project(title)
+  console.log("Project: ", title, " has been created.")
+  allProjects.push(newproject)
 }
 
+// Factory function for creating a task
+function Task(title, description, dueDate, priority) {
+  return {
+    title: title,
+    description: description,
+    dueDate: dueDate,
+    priority: priority
+  }
+}
+
+console.table(allProjects)
 
 
 
+
+
+
+
+
+
+// _______________________________________________________
 // Factory Function Template
 function createObject(param1, param2) {
     // Private variables
