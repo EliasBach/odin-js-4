@@ -1,5 +1,6 @@
 // import module for DOM-related stuff and CSS
 import "./styles.css";
+import "./dom.js";
 
 // Factory function for creating a project
 function Project(title) {
