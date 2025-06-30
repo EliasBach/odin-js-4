@@ -39,3 +39,6 @@ const TestProject = addProject("Sleep")
 TestProject.addTask("Nap", "1h", "00-00-00", "normal")
 TestProject.addTask("Beauty Sleep", "2-3h", "00-00-00", "high")
 DOMUtils.appendToContainer(TestProject)
+
+let testprojectelement = document.querySelector(".project")
+TestProject.tasks.forEach((task) => DOMUtils.appendToProject(task, testprojectelement))
