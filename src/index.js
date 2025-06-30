@@ -1,14 +1,14 @@
 // import module for DOM-related stuff and CSS
 import "./styles.css";
-import "./dom.js";
+import DOMUtils from "./dom.js";
 
 // Factory function for creating a project
 function Project(title) {
   return {
     title: title,
     tasks: [],
-    addTask: function (Task) {
-      this.tasks.push(Task)
+    addTask: function(title, description, dueDate, priority) {
+      this.tasks.push(Task(title, description, dueDate, priority))
       return this.tasks
     }
   }
@@ -21,6 +21,7 @@ function addProject(title) {
   let newproject = Project(title)
   console.log("Project: ", title, " has been created.")
   allProjects.push(newproject)
+  return newproject
 }
 
 // Factory function for creating a task
@@ -33,46 +34,8 @@ function Task(title, description, dueDate, priority) {
   }
 }
 
-console.table(allProjects)
-
-
-
-
-
-
-
-
-
-// _______________________________________________________
-// Factory Function Template
-function createObject(param1, param2) {
-    // Private variables
-    let privateVar = 'private data';
-    
-    // Private function
-    function privateFunction() {
-      return `Accessing ${privateVar}`;
-    }
-    
-    // Return object with public interface
-    return {
-      // Public properties
-      publicProp1: param1,
-      publicProp2: param2,
-      
-      // Public function
-      publicFunction() {
-        return `Public: ${this.publicProp1}`;
-      },
-      
-      // Public function that uses private members
-      usePrivate() {
-        return privateFunction();
-      }
-    };
-  }
-  
-  // Usage
-  // const obj = createObject('value1', 'value2');
-  // console.log(obj.publicFunction()); // "Public: value1"
-  // console.log(obj.usePrivate());     // "Accessing private data"
+// Testing Code
+const TestProject = addProject("Sleep")
+TestProject.addTask("Nap", "1h", "00-00-00", "normal")
+TestProject.addTask("Beauty Sleep", "2-3h", "00-00-00", "high")
+DOMUtils.appendToContainer(TestProject)

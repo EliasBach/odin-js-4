@@ -36,3 +36,7 @@ button, .view, .add {
 h2 {
     background-color: rgb(138, 108, 158);
 }
+
+.project {
+    font-size: large;
+}
