@@ -1,6 +1,8 @@
 // import module for DOM-related stuff and CSS
 import "./styles.css";
+import { compareAsc, format } from "date-fns";
 import DOMUtils from "./dom.js";
+const DATEFORMAT = "yyyy-MM-dd"
 
 // Factory function for creating a project
 function Project(title) {
@@ -36,9 +38,14 @@ function Task(title, description, dueDate, priority) {
 
 // Testing Code
 const TestProject = addProject("Sleep")
-TestProject.addTask("Nap", "1h", "00-00-00", "normal")
-TestProject.addTask("Beauty Sleep", "2-3h", "00-00-00", "high")
-DOMUtils.appendToContainer(TestProject)
+TestProject.addTask("Nap", "1h", format(new Date(2025, 8, 8), DATEFORMAT), "normal")
+TestProject.addTask("Beauty Sleep", "description", format(new Date(2025, 9, 15), DATEFORMAT), "high")
+DOMUtils.appendProjectToDOM(TestProject)
 
 let testprojectelement = document.querySelector(".project")
-TestProject.tasks.forEach((task) => DOMUtils.appendToProject(task, testprojectelement))
+TestProject.tasks.forEach((task) => DOMUtils.appendTaskToProject(task, testprojectelement))
+
+
+/// project will be paused for now
+// i will make a new attempt in the future
+// possible inspiration from: <https://2007mk.github.io/taskify/>
